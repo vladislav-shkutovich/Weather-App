@@ -5,10 +5,12 @@ export const StyledMainLayout = styled.div`
 		${({ theme }) => theme.colors.secondary};
 	box-shadow: ${({ theme }) => theme.boxShadows[0]};
 	width: 90vw;
+	max-width: 100rem;
 	height: 80vh;
+	max-height: 80rem;
 	display: grid;
 	align-self: center;
 	justify-self: center;
-	grid-template-rows: [header-start] 3fr [header-end calendar-start] 3fr [calendar-end weather-start] 3fr [weather-end];
-	grid-template-columns: [clocks-start] 4fr [clocks-end settings-start] 3fr [settings-end city-start] 4fr [city-end];
+	grid-template-rows: 0.1fr [header-start] 3fr [header-end calendar-start] 3fr [calendar-end weather-start] 3fr [weather-end] 0.1fr;
+	grid-template-columns: [application-start] 10fr [application-end];
 `

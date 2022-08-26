@@ -1,6 +1,6 @@
 import React from 'react'
 import { MainLayout } from '@/layouts/MainLayout'
-import { StyledHeader } from './styled'
+import { StyledHeaderContainer } from './styled'
 import { Clocks } from '@/components/Clocks'
 import { Settings } from '@/components/Settings'
 import { CitySelector } from '@/components/CitySelector'
@@ -10,11 +10,11 @@ import { WeatherContainer } from '@/components/WeatherContainer'
 export const MainPage = () => {
 	return (
 		<MainLayout>
-			<StyledHeader>
+			<StyledHeaderContainer>
 				<Clocks />
 				<Settings />
 				<CitySelector />
-			</StyledHeader>
+			</StyledHeaderContainer>
 			<CalendarContainer />
 			<WeatherContainer />
 		</MainLayout>
