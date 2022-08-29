@@ -52,6 +52,8 @@ const primary = '#171d1f'
 const secondary = '#252a2c'
 const secondaryLight = '#2b2e30'
 const background = '#39393a'
+const bright = '#c69963'
+const brightHover = '#6d5d4b'
 
 // const black = '#000000'
 // const white = '#ffffff'
@@ -76,5 +78,7 @@ export default {
 		white,
 		error,
 		background,
+		bright,
+		brightHover,
 	},
 }

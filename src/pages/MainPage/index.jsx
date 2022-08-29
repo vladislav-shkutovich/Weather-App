@@ -2,7 +2,8 @@ import React from 'react'
 import { MainLayout } from '@/layouts/MainLayout'
 import { StyledHeaderContainer } from './styled'
 import { Clocks } from '@/components/Clocks'
-import { Settings } from '@/components/Settings'
+import { ServiceSelector } from '@/components/ServiceSelector'
+import { LoginButton } from '@/components/LoginButton'
 import { CitySelector } from '@/components/CitySelector'
 import { CalendarContainer } from '@/components/CalendarContainer'
 import { WeatherContainer } from '@/components/WeatherContainer'
@@ -12,7 +13,8 @@ export const MainPage = () => {
 		<MainLayout>
 			<StyledHeaderContainer>
 				<Clocks />
-				<Settings />
+				<ServiceSelector />
+				<LoginButton />
 				<CitySelector />
 			</StyledHeaderContainer>
 			<CalendarContainer />
