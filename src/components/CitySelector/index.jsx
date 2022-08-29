@@ -1,8 +1,46 @@
 import React from 'react'
-import { StyledCitySelector } from './styled'
+import { useFormik } from 'formik'
+import {
+	StyledFrom,
+	StyledInput,
+	StyledSearchButton,
+	StyledCountryName,
+} from './styled'
 
 export const CitySelector = () => {
+	const temporalyInputCondition = false
+	// const temporalyInputCondition = true
+
+	const formik = useFormik({
+		initialValues: {
+			input: 'Current City',
+		},
+		onSubmit: (values, { resetForm }) => {
+			resetForm({ input: '' })
+		},
+	})
+
 	return (
-		<StyledCitySelector>CitySelector</StyledCitySelector>
+		<StyledFrom
+			onSubmit={formik.handleSubmit}
+			autoComplete="off">
+			<StyledInput
+				id="input"
+				name="input"
+				placeholder="City"
+				onChange={formik.handleChange}
+				onBlur={formik.handleBlur}
+				value={formik.values.input}
+			/>
+			{temporalyInputCondition ? (
+				<StyledSearchButton type="submit">
+					Search
+				</StyledSearchButton>
+			) : (
+				<StyledCountryName>
+					Current Country
+				</StyledCountryName>
+			)}
+		</StyledFrom>
 	)
 }

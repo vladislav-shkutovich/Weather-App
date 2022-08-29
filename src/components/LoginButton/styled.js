@@ -21,10 +21,10 @@ export const StyledLoginButton = styled.button`
 	& :hover {
 		background-color: ${({ theme }) =>
 			theme.colors.secondaryLight};
-		transform: translateY(0.1rem);
+		transform: scale(1.05);
 	}
 
 	& :active {
-		transform: translateY(-0.1rem);
+		transform: scale(0.95);
 	}
 `
