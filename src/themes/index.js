@@ -9,25 +9,22 @@ const screenSizes = {
 	large: 120,
 }
 
-const margins = [0, 0.5, 1, 1.5, 2, 3, 4, 5]
+const margins = [0.2, 0.5, 1, 1.5, 2, 3, 4, 5]
 
-const paddings = [0, 0.5, 1, 1.5, 2, 3, 4, 5]
+const paddings = [0.2, 0.5, 0.8, 1.0, 1.5, 2, 3, 4]
 
-const fontSizes = [
-	1.2,
-	1.4,
-	1.6,
-	1.8,
-	2.0,
-	2.4,
-	3.2,
-	4.0,
-	5.6,
-	7.2,
-	8.0,
-]
+const fontSizes = {
+	xxsmall: 0.8,
+	xsmall: 1.0,
+	small: 1.2,
+	medium: 1.4,
+	regular: 1.6,
+	large: 1.8,
+	xlarge: 3.2,
+	xxlarge: 4.8,
+}
 
-// Color palette
+// Color palettes
 
 // const black = '#000000'
 // const white = '#ffffff'
@@ -36,6 +33,8 @@ const fontSizes = [
 // const secondary = '#c5ff68'
 // const secondaryLight = '#e8ffc3'
 // const background = '#f7ffe7'
+// const bright = '#c69963'
+// const brightHover = '#6d5d4b'
 
 // const black = '#000000'
 // const white = '#ffffff'
@@ -44,6 +43,8 @@ const fontSizes = [
 // const secondary = '#76b1ff'
 // const secondaryLight = '#d7e9ff'
 // const background = '#f2f8ff'
+// const bright = '#c69963'
+// const brightHover = '#6d5d4b'
 
 const black = '#b4c4d5'
 const white = '#171d1f'
@@ -62,6 +63,8 @@ const brightHover = '#6d5d4b'
 // const secondary = '#a697ff'
 // const secondaryLight = '#d2caff'
 // const background = '#e5e1ff'
+// const bright = '#c69963'
+// const brightHover = '#6d5d4b'
 
 export default {
 	font,

@@ -7,12 +7,12 @@ export const StyledLoginButton = styled.button`
 	justify-self: center;
 
 	border: none;
-	border-radius: 0.5rem;
+	border-radius: 0.8rem;
 	height: 4rem;
 	width: 12rem;
 
 	cursor: pointer;
-	font-size: ${({ theme }) => theme.fontSizes[1]}rem;
+	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
 	background-color: ${({ theme }) =>
 		theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.black};

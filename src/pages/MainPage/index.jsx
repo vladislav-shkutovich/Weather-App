@@ -1,23 +1,23 @@
 import React from 'react'
 import { MainLayout } from '@/layouts/MainLayout'
-import { StyledHeaderContainer } from './styled'
+import { StyledHeader } from './styled'
 import { Clocks } from '@/components/Clocks'
 import { ServiceSelector } from '@/components/ServiceSelector'
 import { LoginButton } from '@/components/LoginButton'
 import { CitySelector } from '@/components/CitySelector'
-import { CalendarContainer } from '@/components/CalendarContainer'
+import { Calendar } from '@/components/Calendar'
 import { WeatherContainer } from '@/components/WeatherContainer'
 
 export const MainPage = () => {
 	return (
 		<MainLayout>
-			<StyledHeaderContainer>
+			<StyledHeader>
 				<Clocks />
 				<ServiceSelector />
 				<LoginButton />
 				<CitySelector />
-			</StyledHeaderContainer>
-			<CalendarContainer />
+			</StyledHeader>
+			<Calendar />
 			<WeatherContainer />
 		</MainLayout>
 	)

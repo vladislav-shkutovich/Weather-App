@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledHeaderContainer = styled.div`
+export const StyledHeader = styled.div`
 	/* border: 0.3rem solid ${({ theme }) =>
 		theme.colors.error}; */
 	grid-row: header-start / header-end;

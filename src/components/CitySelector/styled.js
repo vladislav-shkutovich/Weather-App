@@ -15,7 +15,7 @@ export const StyledInput = styled.input`
 	align-self: flex-end;
 
 	height: 3rem;
-	font-size: ${({ theme }) => theme.fontSizes[6]}rem;
+	font-size: ${({ theme }) => theme.fontSizes.xlarge}rem;
 	color: ${({ theme }) => theme.colors.black};
 	background: none;
 	border: none;
@@ -25,8 +25,9 @@ export const StyledCountryName = styled.p`
 	grid-row: country-start / country-end;
 	grid-column: country-start / country-end;
 	align-self: flex-start;
+	padding-left: ${({ theme }) => theme.paddings[2]}rem;
 
-	font-size: ${({ theme }) => theme.fontSizes[2]}rem;
+	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
 `
 
 export const StyledSearchButton = styled.button`
@@ -35,7 +36,7 @@ export const StyledSearchButton = styled.button`
 	align-self: flex-start;
 
 	border: none;
-	font-size: ${({ theme }) => theme.fontSizes[2]}rem;
+	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
 	background-color: ${({ theme }) =>
 		theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.black};

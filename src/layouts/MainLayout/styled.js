@@ -11,6 +11,6 @@ export const StyledMainLayout = styled.div`
 	display: grid;
 	align-self: center;
 	justify-self: center;
-	grid-template-rows: 0.1fr [header-start] 3fr [header-end calendar-start] 3fr [calendar-end weather-start] 3fr [weather-end] 0.1fr;
-	grid-template-columns: [application-start] 10fr [application-end];
+	grid-template-rows: 0.1fr [header-start] 2fr [header-end calendar-start] 3fr [calendar-end weather-start] 3fr [weather-end] 0.1fr;
+	grid-template-columns: [application-start] 1fr [calendar-start] 8fr [calendar-end] 1fr [application-end];
 `
