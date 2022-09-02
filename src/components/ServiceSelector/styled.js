@@ -13,8 +13,11 @@ export const StyledServiceSelector = styled.select`
 	border-radius: 0.8rem;
 
 	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
-	background-color: ${({ theme }) =>
-		theme.colors.secondary};
+	background: linear-gradient(
+		to bottom left,
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.secondary}
+	);
 	color: ${({ theme }) => theme.colors.black};
 	padding: ${({ theme }) => theme.paddings[1]}rem;
 

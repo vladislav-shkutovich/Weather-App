@@ -11,9 +11,10 @@ export const WeatherToday = ({
 	weather,
 	temperature,
 }) => {
+	console.log(weather)
 	return (
 		<StyledWeatherToday>
-			<StyledIcon alt={weather} />
+			<StyledIcon alt={weather} src={weather} />
 			<StyledToday>Today</StyledToday>
 			<StyledTemperature>{temperature}°C</StyledTemperature>
 		</StyledWeatherToday>

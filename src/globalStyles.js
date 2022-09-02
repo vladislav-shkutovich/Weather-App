@@ -12,8 +12,6 @@ export default createGlobalStyle`
 		font-family: ${theme.font};
 		font-size: 62.5%;
 		color: ${({ theme }) => theme.colors.black};
-		/* -webkit-text-stroke: 0.5px ${({ theme }) =>
-			theme.colors.white}; */
 		width: 100%;
 		height: 100%;
   }
@@ -23,9 +21,14 @@ export default createGlobalStyle`
 		width: 100%;
 		height: 100%;
 		display: grid;
-		background: linear-gradient(to bottom, ${({ theme }) =>
+		/* background: linear-gradient(to bottom, ${({ theme }) =>
 			theme.colors.background}, ${({ theme }) =>
-	theme.colors.secondaryLight}) 100% 100% no-repeat;
+	theme.colors.secondaryLight}) 100% 100% no-repeat; */
+		background-image: linear-gradient(to bottom, ${({
+			theme,
+		}) => theme.colors.backgroundImage}, ${({ theme }) =>
+	theme.colors
+		.backgroundImageSecondary}), url('../public/assets/background.jpg');
 		background-size: cover;
     background-position: center;
     }

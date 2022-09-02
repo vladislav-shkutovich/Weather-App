@@ -16,13 +16,11 @@ export const StyledIcon = styled.img`
 	grid-column: icon-start / icon-end;
 	align-self: center;
 	justify-self: end;
+	background-size: cover;
 
+	min-width: 5rem;
 	width: 100%;
 	max-width: 13rem;
-	height: 80%;
-	max-height: 13rem;
-	background-color: ${({ theme }) =>
-		theme.colors.background};
 	border-radius: 2rem;
 `
 

@@ -14,7 +14,7 @@ export const WeatherWeeklyItem = ({
 	return (
 		<StyledWeatherWeeklyItem>
 			<StyledDay>{day}</StyledDay>
-			<StyledIcon alt={weather} />
+			<StyledIcon alt={weather} src={weather} />
 			<StyledTemperature>{temperature}°C</StyledTemperature>
 		</StyledWeatherWeeklyItem>
 	)

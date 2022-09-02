@@ -10,7 +10,7 @@ export const StyledCalendar = styled.div`
 	overflow: auto;
 
 	& ::-webkit-scrollbar {
-		width: 0.6rem;
+		width: 0.8rem;
 		height: 0.6rem;
 	}
 
@@ -18,11 +18,15 @@ export const StyledCalendar = styled.div`
 		border-radius: 5px;
 		border: 2px solid
 			${({ theme }) => theme.colors.secondary};
-		background-color: ${({ theme }) => theme.colors.black};
+		background-color: ${({ theme }) =>
+			theme.colors.background};
 	}
 
 	& ::-webkit-scrollbar-track {
+		border-radius: 5px;
+		border: 2px solid
+			${({ theme }) => theme.colors.secondary};
 		background-color: ${({ theme }) =>
-			theme.colors.secondaryLight};
+			theme.colors.secondary};
 	}
 `

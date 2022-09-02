@@ -1,8 +1,9 @@
 const font = 'sans-serif'
 
 const boxShadows = [
-	'0rem 0.5rem 1.5rem rgba(0,0,0,0.5)',
-	'0rem 0.5rem 1.5rem rgba(0,0,0,0.3)',
+	'0rem 1.5rem 4rem rgba(0,0,0,0.7)',
+	'0rem 1rem 3rem rgba(0,0,0,0.5)',
+	'0rem 0rem 3rem rgba(0,0,0,0.3)',
 ]
 
 const screenSizes = {
@@ -65,6 +66,9 @@ const secondary = '#252a2c'
 const secondaryLight = '#2b2e30'
 const background = '#39393a'
 
+const backgroundImage = 'rgb(57, 57, 58, 0.8)'
+const backgroundImageSecondary = 'rgb(43, 46, 48, 0.8)'
+
 // * Highligthes
 
 // const highlight = '#c69963'
@@ -94,6 +98,8 @@ export default {
 		white,
 		error,
 		background,
+		backgroundImage,
+		backgroundImageSecondary,
 		highlight,
 		highlightSecondary,
 	},

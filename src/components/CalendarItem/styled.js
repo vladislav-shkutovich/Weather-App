@@ -11,8 +11,11 @@ export const StyledCalendarItem = styled.div`
 
 export const StyledTaskTime = styled.div`
 	padding: ${({ theme }) => theme.paddings[2]}rem;
-	background-color: ${({ theme }) =>
-		theme.colors.secondary};
+	background: linear-gradient(
+		to bottom right,
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.secondary}
+	);
 	border-radius: 1rem;
 	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
 `

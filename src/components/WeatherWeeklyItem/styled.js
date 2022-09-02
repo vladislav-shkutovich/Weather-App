@@ -15,22 +15,21 @@ export const StyledDay = styled.p`
 	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
 	padding: ${({ theme }) => theme.paddings[1]}rem
 		${({ theme }) => theme.paddings[3]}rem;
+	margin-top: ${({ theme }) => theme.margins[2]}rem;
 	background-color: ${({ theme }) => theme.colors.primary};
 	border-radius: 1rem;
 `
 
 export const StyledIcon = styled.img`
 	justify-self: center;
-	background-color: ${({ theme }) =>
-		theme.colors.background};
+	background-size: cover;
 	border-radius: 2rem;
-	height: 40%;
-	max-height: 8rem;
-	width: 80%;
+	width: 70%;
 	max-width: 8rem;
 `
 
 export const StyledTemperature = styled.p`
 	font-size: ${({ theme }) =>
 		theme.fontSizes.temperatureWeekly}rem;
+	margin-bottom: ${({ theme }) => theme.margins[2]}rem;
 `

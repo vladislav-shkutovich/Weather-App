@@ -6,6 +6,7 @@ export const StyledWeatherContainer = styled.div`
 	grid-row: weather-start / weather-end;
 	grid-column: application-start / application-end;
 	background-color: ${({ theme }) => theme.colors.secondary};
+	box-shadow: ${({ theme }) => theme.boxShadows[2]};
 
 	display: grid;
 	grid-template-rows: 0.5fr [weather-start] 4fr [weather-end] 0.5fr;
