@@ -18,6 +18,16 @@ export const StyledDay = styled.p`
 	margin-top: ${({ theme }) => theme.margins[2]}rem;
 	background-color: ${({ theme }) => theme.colors.primary};
 	border-radius: 1rem;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.small}) {
+		margin-top: ${({ theme }) => theme.margins[5]}rem;
+	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xs}) {
+		font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+	}
 `
 
 export const StyledIcon = styled.img`
@@ -32,4 +42,14 @@ export const StyledTemperature = styled.p`
 	font-size: ${({ theme }) =>
 		theme.fontSizes.temperatureWeekly}rem;
 	margin-bottom: ${({ theme }) => theme.margins[2]}rem;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.small}) {
+		margin-bottom: ${({ theme }) => theme.margins[5]}rem;
+	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xs}) {
+		font-size: ${({ theme }) => theme.fontSizes.large}rem;
+	}
 `

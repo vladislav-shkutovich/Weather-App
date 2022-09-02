@@ -19,6 +19,18 @@ export const StyledInput = styled.input`
 	color: ${({ theme }) => theme.colors.black};
 	background: none;
 	border: none;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.medium}) {
+		font-size: ${({ theme }) =>
+			theme.fontSizes.citySizeMedia}rem;
+	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xxs}) {
+		font-size: ${({ theme }) =>
+			theme.fontSizes.temperatureWeekly}rem;
+	}
 `
 
 export const StyledCountryName = styled.p`
@@ -26,8 +38,12 @@ export const StyledCountryName = styled.p`
 	grid-column: country-start / country-end;
 	align-self: flex-start;
 	padding-left: ${({ theme }) => theme.paddings[2]}rem;
-
 	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xxs}) {
+		font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+	}
 `
 
 export const StyledSearchButton = styled.button`

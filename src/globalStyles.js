@@ -14,6 +14,11 @@ export default createGlobalStyle`
 		color: ${({ theme }) => theme.colors.black};
 		width: 100%;
 		height: 100%;
+
+		@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.small}) {
+		font-size: 50%;
+		}
   }
 
 	#root {
@@ -21,9 +26,6 @@ export default createGlobalStyle`
 		width: 100%;
 		height: 100%;
 		display: grid;
-		/* background: linear-gradient(to bottom, ${({ theme }) =>
-			theme.colors.background}, ${({ theme }) =>
-	theme.colors.secondaryLight}) 100% 100% no-repeat; */
 		background-image: linear-gradient(to bottom, ${({
 			theme,
 		}) => theme.colors.backgroundImage}, ${({ theme }) =>
@@ -31,5 +33,5 @@ export default createGlobalStyle`
 		.backgroundImageSecondary}), url('../public/assets/background.jpg');
 		background-size: cover;
     background-position: center;
-    }
+  }
 `

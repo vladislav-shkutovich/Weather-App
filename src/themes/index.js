@@ -6,11 +6,12 @@ const boxShadows = [
 	'0rem 0rem 3rem rgba(0,0,0,0.3)',
 ]
 
-const screenSizes = {
-	xs: 55,
-	small: 76.8,
-	medium: 99.2,
-	large: 120,
+const breakpoints = {
+	xxs: '460px',
+	xs: '520px',
+	small: '660px',
+	medium: '760px',
+	large: '900px',
 }
 
 const margins = [0.2, 0.5, 1, 1.5, 2, 3, 4, 5]
@@ -25,6 +26,7 @@ const fontSizes = {
 	regular: 1.6,
 	large: 1.8,
 	temperatureWeekly: 2.2,
+	citySizeMedia: 2.6,
 	xlarge: 3.6,
 	temperature: 4.0,
 	xxlarge: 4.8,
@@ -86,7 +88,7 @@ const highlightSecondary = '#a62639'
 export default {
 	font,
 	boxShadows,
-	screenSizes,
+	breakpoints,
 	margins,
 	paddings,
 	fontSizes,

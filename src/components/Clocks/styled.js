@@ -17,13 +17,28 @@ export const StyledTime = styled.p`
 	align-self: flex-end;
 	justify-self: right;
 	font-size: ${({ theme }) => theme.fontSizes.xxlarge}rem;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.medium}) {
+		font-size: ${({ theme }) => theme.fontSizes.xlarge}rem;
+	}
 `
 
 export const StyledDayPart = styled.p`
 	grid-row: time-start / time-end;
 	grid-column: daypart-start / daypart-end;
 	justify-self: left;
-	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
+	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.medium}) {
+		margin-top: ${({ theme }) => theme.margins[5]}rem;
+	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.medium}) {
+		margin-top: ${({ theme }) => theme.margins[7]}rem;
+	}
 `
 
 export const StyledDate = styled.p`
@@ -31,4 +46,9 @@ export const StyledDate = styled.p`
 	grid-column: time-start / daypart-end;
 	align-self: flex-start;
 	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xxs}) {
+		font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+	}
 `

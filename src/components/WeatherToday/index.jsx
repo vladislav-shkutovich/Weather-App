@@ -11,7 +11,6 @@ export const WeatherToday = ({
 	weather,
 	temperature,
 }) => {
-	console.log(weather)
 	return (
 		<StyledWeatherToday>
 			<StyledIcon alt={weather} src={weather} />
