@@ -1,21 +1,21 @@
 import React from 'react'
 import {
-	StyledWeatherToday,
+	StyledWeatherWeeklyItem,
+	StyledDay,
 	StyledIcon,
-	StyledToday,
 	StyledTemperature,
 } from './styled'
 
-export const WeatherToday = ({
+export const WeatherWeeklyItem = ({
 	day,
 	weather,
 	temperature,
 }) => {
 	return (
-		<StyledWeatherToday>
+		<StyledWeatherWeeklyItem>
+			<StyledDay>{day}</StyledDay>
 			<StyledIcon alt={weather} />
-			<StyledToday>Today</StyledToday>
 			<StyledTemperature>{temperature}°C</StyledTemperature>
-		</StyledWeatherToday>
+		</StyledWeatherWeeklyItem>
 	)
 }

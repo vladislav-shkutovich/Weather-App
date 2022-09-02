@@ -1,6 +1,9 @@
 const font = 'sans-serif'
 
-const boxShadows = ['0rem 0.5rem 1rem rgba(0,0,0,0.5)']
+const boxShadows = [
+	'0rem 0.5rem 1.5rem rgba(0,0,0,0.5)',
+	'0rem 0.5rem 1.5rem rgba(0,0,0,0.3)',
+]
 
 const screenSizes = {
 	xs: 55,
@@ -20,51 +23,61 @@ const fontSizes = {
 	medium: 1.4,
 	regular: 1.6,
 	large: 1.8,
-	xlarge: 3.2,
+	temperatureWeekly: 2.2,
+	xlarge: 3.6,
+	temperature: 4.0,
 	xxlarge: 4.8,
 }
 
-// Color palettes
+// * Color palettes
 
-// const black = '#000000'
-// const white = '#ffffff'
-// const error = '#bd3636'
+const error = '#bd3636'
+
+// * Dark theme
+const black = '#b4c4d5'
+const white = '#171d1f'
+
+// * Light theme
+// const black = '#171d1f'
+// const white = '#b4c4d5'
+
+// ? Green
 // const primary = '#9cff1b'
 // const secondary = '#c5ff68'
 // const secondaryLight = '#e8ffc3'
 // const background = '#f7ffe7'
-// const bright = '#c69963'
-// const brightHover = '#6d5d4b'
 
-// const black = '#000000'
-// const white = '#ffffff'
-// const error = '#bd3636'
+// ? Blue
 // const primary = '#2b87ff'
 // const secondary = '#76b1ff'
 // const secondaryLight = '#d7e9ff'
 // const background = '#f2f8ff'
-// const bright = '#c69963'
-// const brightHover = '#6d5d4b'
 
-const black = '#b4c4d5'
-const white = '#171d1f'
-const error = '#bd3636'
-const primary = '#171d1f'
-const secondary = '#252a2c'
-const secondaryLight = '#2b2e30'
-const background = '#39393a'
-const bright = '#c69963'
-const brightHover = '#6d5d4b'
-
-// const black = '#000000'
-// const white = '#ffffff'
-// const error = '#bd3636'
+// ? Violet
 // const primary = '#a575f1'
 // const secondary = '#a697ff'
 // const secondaryLight = '#d2caff'
 // const background = '#e5e1ff'
-// const bright = '#c69963'
-// const brightHover = '#6d5d4b'
+
+// ? Black
+const primary = '#171d1f'
+const secondary = '#252a2c'
+const secondaryLight = '#2b2e30'
+const background = '#39393a'
+
+// * Highligthes
+
+// const highlight = '#c69963'
+// const highlightSecondary = '#6d5d4b'
+
+const highlight = '#db324d'
+const highlightSecondary = '#a62639'
+
+// const highlight = '#63d471'
+// const highlightSecondary = '#4e7d55'
+
+// const highlight = '#064789'
+// const highlightSecondary = '#427aa1'
 
 export default {
 	font,
@@ -81,7 +94,7 @@ export default {
 		white,
 		error,
 		background,
-		bright,
-		brightHover,
+		highlight,
+		highlightSecondary,
 	},
 }
