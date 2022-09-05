@@ -57,20 +57,30 @@ export const StyledSearchButton = styled.button`
 	align-self: flex-start;
 
 	border: none;
-	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
-	background-color: ${({ theme }) =>
-		theme.colors.secondary};
+	border-radius: 0.8rem;
+	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+	background: linear-gradient(
+		to bottom left,
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.secondary}
+	);
 	color: ${({ theme }) => theme.colors.black};
+	padding: ${({ theme }) => theme.paddings[1]}rem;
 	height: 3rem;
 	width: 8rem;
 
 	& :hover {
 		background-color: ${({ theme }) =>
 			theme.colors.secondaryLight};
-		transform: scale(1.05);
+		transform: scale(1.03);
 	}
 
 	& :active {
-		transform: scale(0.95);
+		transform: scale(0.98);
+	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xs}) {
+		font-size: ${({ theme }) => theme.fontSizes.small}rem;
 	}
 `
