@@ -33,5 +33,26 @@ export default createGlobalStyle`
 		.backgroundImageSecondary}), url('../public/assets/background.jpg');
 		background-size: cover;
     background-position: center;
+
+		overflow-y: auto;
+
+	& ::-webkit-scrollbar {
+		width: 0.8rem;
+		height: 0.6rem;
+	}
+
+	& ::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		border: 2px solid
+			${({ theme }) => theme.colors.secondary};
+		background-color: ${({ theme }) => theme.colors.background};
+	}
+
+	& ::-webkit-scrollbar-track {
+		border-radius: 5px;
+		border: 2px solid
+			${({ theme }) => theme.colors.secondary};
+		background-color: ${({ theme }) => theme.colors.secondary};
+	}
   }
 `

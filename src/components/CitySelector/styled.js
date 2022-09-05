@@ -7,6 +7,11 @@ export const StyledFrom = styled.form`
 	display: grid;
 	grid-template-rows: 1fr [input-start] 3fr [input-end] 0.5fr [country-start button-start] 2fr [country-end button-end] 2fr;
 	grid-template-columns: 1fr [input-start country-start button-start] 4fr [country-end button-end] 1fr [ input-end] 1fr;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xxs}) {
+		grid-template-columns: 0.5fr [input-start country-start button-start] 4fr [country-end button-end] 1fr [ input-end] 1fr;
+	}
 `
 
 export const StyledInput = styled.input`

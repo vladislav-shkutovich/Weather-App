@@ -24,6 +24,29 @@ export const StyledWeatherWeekly = styled.div`
 	display: flex;
 	column-gap: 1rem;
 	flex-wrap: nowrap;
+	overflow-x: auto;
+	box-shadow: ${({ theme }) => theme.boxShadows[1]};
+
+	& ::-webkit-scrollbar {
+		width: 0.8rem;
+		height: 0.6rem;
+	}
+
+	& ::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		border: 2px solid
+			${({ theme }) => theme.colors.secondary};
+		background-color: ${({ theme }) =>
+			theme.colors.background};
+	}
+
+	& ::-webkit-scrollbar-track {
+		border-radius: 5px;
+		border: 2px solid
+			${({ theme }) => theme.colors.secondary};
+		background-color: ${({ theme }) =>
+			theme.colors.secondary};
+	}
 
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.xs}) {

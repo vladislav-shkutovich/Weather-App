@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const StyledWeatherWeeklyItem = styled.div`
 	height: 100%;
 	width: 16%;
+	min-width: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

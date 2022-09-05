@@ -9,6 +9,11 @@ export const StyledClocks = styled.div`
 	align-items: center;
 	grid-template-rows: 0.5fr [time-start] 3.5fr [time-end] 0.5fr [date-start] 2fr [date-end] 1fr;
 	grid-template-columns: 1fr [time-start] 4fr [time-end] 0.2fr [daypart-start] 1.8fr [daypart-end] 1fr;
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xxs}) {
+		grid-template-columns: 1fr [time-start] 4fr [time-end] 0.2fr [daypart-start] 1.8fr [daypart-end] 0.2fr;
+	}
 `
 
 export const StyledTime = styled.p`
@@ -21,6 +26,12 @@ export const StyledTime = styled.p`
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.medium}) {
 		font-size: ${({ theme }) => theme.fontSizes.xlarge}rem;
+	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xxs}) {
+		font-size: ${({ theme }) =>
+			theme.fontSizes.clocksTimeMedia}rem;
 	}
 `
 
@@ -36,7 +47,7 @@ export const StyledDayPart = styled.p`
 	}
 
 	@media only screen and (max-width: ${({ theme }) =>
-			theme.breakpoints.medium}) {
+			theme.breakpoints.small}) {
 		margin-top: ${({ theme }) => theme.margins[7]}rem;
 	}
 `

@@ -31,4 +31,10 @@ export const StyledServiceSelector = styled.select`
 		background-color: ${({ theme }) =>
 			theme.colors.secondaryLight};
 	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xs}) {
+		width: 10rem;
+		font-size: ${({ theme }) => theme.fontSizes.small}rem;
+	}
 `

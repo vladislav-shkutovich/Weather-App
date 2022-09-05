@@ -30,4 +30,10 @@ export const StyledLoginButton = styled.button`
 	& :active {
 		transform: scale(0.98);
 	}
+
+	@media only screen and (max-width: ${({ theme }) =>
+			theme.breakpoints.xs}) {
+		width: 10rem;
+		font-size: ${({ theme }) => theme.fontSizes.small}rem;
+	}
 `

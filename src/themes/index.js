@@ -27,6 +27,7 @@ const fontSizes = {
 	large: 1.8,
 	temperatureWeekly: 2.2,
 	citySizeMedia: 2.6,
+	clocksTimeMedia: 3.2,
 	xlarge: 3.6,
 	temperature: 4.0,
 	xxlarge: 4.8,
