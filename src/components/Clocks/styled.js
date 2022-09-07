@@ -56,10 +56,11 @@ export const StyledDate = styled.p`
 	grid-row: date-start / date-end;
 	grid-column: time-start / daypart-end;
 	align-self: flex-start;
-	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
+	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+	text-align: center;
 
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.xxs}) {
-		font-size: ${({ theme }) => theme.fontSizes.medium}rem;
+		font-size: ${({ theme }) => theme.fontSizes.small}rem;
 	}
 `
