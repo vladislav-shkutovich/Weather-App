@@ -8,8 +8,9 @@ import {
 } from './styled'
 
 export const CitySelector = () => {
-	// const temporalyInputCondition = false
-	const temporalyInputCondition = true
+	// ! Временно, пока нет рендера по условиям
+	const temporalyInputCondition = false
+	// const temporalyInputCondition = true
 
 	const formik = useFormik({
 		initialValues: {

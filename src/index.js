@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { store } from '@/store/index'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import theme from '@/themes'
+import { store } from '@/store/store'
 
 import { App } from '@/App'
 
