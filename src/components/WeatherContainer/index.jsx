@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import { fetchCurrentWeather } from '@/store/thunks/fetchCurrentWeather'
 import { fetchCurrentWeather } from '@/store/slices/currentWeatherSlice'
+import { fetchWeeklyWeather } from '@/store/slices/weeklyWeatherSlice'
 import { selectCurrentWeatherData } from '@/store/selectors'
 
 import { WeatherToday } from '@/components/WeatherToday'
@@ -16,11 +16,13 @@ import {
 } from './styled'
 
 export const WeatherContainer = () => {
+	// ! Временно
 	const dispatch = useDispatch()
 	const { weather } = useSelector(selectCurrentWeatherData)
 
-	useEffect(() => {
-		dispatch(fetchCurrentWeather('Brest'))
+	useEffect(city => {
+		dispatch(fetchCurrentWeather(city))
+		// dispatch(fetchWeeklyWeather(city))
 	}, [])
 
 	return (
