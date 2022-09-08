@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-	weather: {},
+	weather: {
+		main: {
+			temp: 0,
+		},
+		weather: [{ icon: '04d', main: 'Clouds' }],
+	},
 	isLoading: false,
 	response: {
 		status: 0,

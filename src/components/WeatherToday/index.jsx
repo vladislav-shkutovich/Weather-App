@@ -1,6 +1,5 @@
-import { fetchCurrentWeather } from '@/store/sagas/fetchCurrentWeather'
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react'
+import { getWeatherIcon } from '@/helpers'
 import {
 	StyledWeatherToday,
 	StyledIcon,
@@ -8,22 +7,18 @@ import {
 	StyledTemperature,
 } from './styled'
 
-export const WeatherToday = ({
-	day,
-	weather,
-	temperature,
-}) => {
-	const dispatch = useDispatch()
-
-	useEffect(() => {
-		dispatch(fetchCurrentWeather('Brest'))
-	}, [])
+export const WeatherToday = ({ weather }) => {
+	// eslint-disable-next-line prefer-destructuring
+	const { icon, main } = weather.weather[0]
+	const { temp } = weather.main
 
 	return (
 		<StyledWeatherToday>
-			<StyledIcon alt={weather} src={weather} />
+			<StyledIcon alt={main} src={getWeatherIcon(icon)} />
 			<StyledToday>Today</StyledToday>
-			<StyledTemperature>{temperature}°C</StyledTemperature>
+			<StyledTemperature>
+				{Math.round(temp)}°C
+			</StyledTemperature>
 		</StyledWeatherToday>
 	)
 }
