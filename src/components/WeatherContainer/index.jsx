@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchCurrentWeather } from '@/store/sagas/fetchCurrentWeather'
+// import { fetchCurrentWeather } from '@/store/thunks/fetchCurrentWeather'
+import { fetchCurrentWeather } from '@/store/slices/currentWeatherSlice'
 import { selectCurrentWeatherData } from '@/store/selectors'
 
 import { WeatherToday } from '@/components/WeatherToday'
@@ -16,7 +17,6 @@ import {
 
 export const WeatherContainer = () => {
 	const dispatch = useDispatch()
-
 	const { weather } = useSelector(selectCurrentWeatherData)
 
 	useEffect(() => {
