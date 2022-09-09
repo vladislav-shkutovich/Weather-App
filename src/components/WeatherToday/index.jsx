@@ -13,11 +13,11 @@ import {
 export const WeatherToday = ({ weatherTodayData }) => {
 	const {
 		tempToday,
-		feelsLikeToday,
+		feelsLikeToday = '',
 		humidityToday,
 		windToday,
 		iconToday = '10d',
-		iconAltToday,
+		iconAltToday = '',
 	} = weatherTodayData
 
 	return (
