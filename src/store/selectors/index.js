@@ -1,2 +1,1 @@
-export * from './selectCurrentWeatherData'
-export * from './selectWeeklyWeatherData'
+export * from './selectWeatherData'

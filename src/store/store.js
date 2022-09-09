@@ -3,14 +3,14 @@ import {
 	configureStore,
 	getDefaultMiddleware,
 } from '@reduxjs/toolkit'
-import currentWeatherSliceReducer from '@/store/slices/currentWeatherSlice'
+import weatherSliceReducer from '@/store/slices/weatherSlice'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
-	currentWeatherSliceReducer,
+	weatherSliceReducer,
 })
 
 const middleware = [

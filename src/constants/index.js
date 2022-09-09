@@ -35,3 +35,13 @@ export const DUMMY_WEATHER_DATA = {
 		temperature: 21,
 	},
 }
+
+export const WEEKDAYS = [
+	'MON',
+	'TUE',
+	'WED',
+	'THU',
+	'FRI',
+	'SAT',
+	'SUN',
+]

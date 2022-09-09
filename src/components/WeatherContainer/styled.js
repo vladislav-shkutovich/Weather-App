@@ -9,11 +9,11 @@ export const StyledWeatherContainer = styled.div`
 
 	display: grid;
 	grid-template-rows: 0.5fr [weather-start] 4fr [weather-end] 0.5fr;
-	grid-template-columns: 0.5fr [today-start] 3fr [today-end] 0.2fr [weekly-start] 9fr [weekly-end] 0.5fr;
+	grid-template-columns: 0.5fr [today-start] 5fr [today-end] 0.2fr [weekly-start] 7fr [weekly-end] 0.5fr;
 
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.xs}) {
-		grid-template-columns: 0.5fr [today-start] 3fr [today-end] 0fr [weekly-start] 9fr [weekly-end];
+		grid-template-columns: 0.5fr [today-start] 5fr [today-end] 0fr [weekly-start] 7fr [weekly-end];
 	}
 `
 

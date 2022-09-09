@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledWeatherWeeklyItem = styled.div`
 	height: 100%;
-	width: 16%;
+	width: 24%;
 	min-width: 60px;
 	display: flex;
 	flex-direction: column;
@@ -35,7 +35,7 @@ export const StyledIcon = styled.img`
 	justify-self: center;
 	background-size: cover;
 	border-radius: 2rem;
-	width: 70%;
+	width: 95%;
 	max-width: 8rem;
 `
 

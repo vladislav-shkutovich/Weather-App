@@ -7,6 +7,7 @@ const boxShadows = [
 ]
 
 const breakpoints = {
+	xxxs: '420px',
 	xxs: '460px',
 	xs: '520px',
 	small: '660px',

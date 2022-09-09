@@ -14,7 +14,7 @@ export const CitySelector = () => {
 
 	const formik = useFormik({
 		initialValues: {
-			input: 'Current City',
+			input: 'City',
 		},
 		onSubmit: (values, { resetForm }) => {
 			resetForm({ input: '' })
@@ -38,9 +38,7 @@ export const CitySelector = () => {
 					Search
 				</StyledSearchButton>
 			) : (
-				<StyledCountryName>
-					Current Country
-				</StyledCountryName>
+				<StyledCountryName>Country</StyledCountryName>
 			)}
 		</StyledFrom>
 	)

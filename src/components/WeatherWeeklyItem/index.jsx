@@ -1,4 +1,5 @@
 import React from 'react'
+import { getWeatherIcon } from '@/helpers'
 import {
 	StyledWeatherWeeklyItem,
 	StyledDay,
@@ -8,14 +9,18 @@ import {
 
 export const WeatherWeeklyItem = ({
 	day,
-	weather,
-	temperature,
+	icon = '10d',
+	iconAlt,
+	temp,
 }) => {
 	return (
 		<StyledWeatherWeeklyItem>
 			<StyledDay>{day}</StyledDay>
-			<StyledIcon alt={weather} src={weather} />
-			<StyledTemperature>{temperature}°C</StyledTemperature>
+			<StyledIcon
+				alt={iconAlt}
+				src={getWeatherIcon(icon)}
+			/>
+			<StyledTemperature>{temp}°C</StyledTemperature>
 		</StyledWeatherWeeklyItem>
 	)
 }

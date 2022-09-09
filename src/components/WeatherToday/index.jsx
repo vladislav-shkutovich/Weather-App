@@ -5,20 +5,45 @@ import {
 	StyledIcon,
 	StyledToday,
 	StyledTemperature,
+	StyledInfoContainer,
+	StyledInfoLabel,
+	StyledInfoDescription,
 } from './styled'
 
-export const WeatherToday = ({ weather }) => {
-	// eslint-disable-next-line prefer-destructuring
-	const { icon, main } = weather.weather[0]
-	const { temp } = weather.main
+export const WeatherToday = ({ weatherTodayData }) => {
+	const {
+		tempToday,
+		feelsLikeToday,
+		humidityToday,
+		windToday,
+		iconToday = '10d',
+		iconAltToday,
+	} = weatherTodayData
 
 	return (
 		<StyledWeatherToday>
-			<StyledIcon alt={main} src={getWeatherIcon(icon)} />
-			<StyledToday>Today</StyledToday>
+			<StyledIcon
+				alt={iconAltToday}
+				src={getWeatherIcon(iconToday)}
+			/>
+			<StyledToday>NOW</StyledToday>
 			<StyledTemperature>
-				{Math.round(temp)}°C
+				{Math.round(tempToday)}°C
 			</StyledTemperature>
+			<StyledInfoContainer>
+				<StyledInfoLabel>Feels Like:</StyledInfoLabel>
+				<StyledInfoDescription>
+					{feelsLikeToday}°C
+				</StyledInfoDescription>
+				<StyledInfoLabel>Humidity:</StyledInfoLabel>
+				<StyledInfoDescription>
+					{humidityToday}%
+				</StyledInfoDescription>
+				<StyledInfoLabel>Wind:</StyledInfoLabel>
+				<StyledInfoDescription>
+					{windToday} m/s
+				</StyledInfoDescription>
+			</StyledInfoContainer>
 		</StyledWeatherToday>
 	)
 }
