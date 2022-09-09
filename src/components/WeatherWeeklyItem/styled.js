@@ -17,7 +17,11 @@ export const StyledDay = styled.p`
 	padding: ${({ theme }) => theme.paddings[1]}rem
 		${({ theme }) => theme.paddings[3]}rem;
 	margin-top: ${({ theme }) => theme.margins[2]}rem;
-	background-color: ${({ theme }) => theme.colors.primary};
+	background: linear-gradient(
+		to bottom,
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.primaryLighter}
+	);
 	border-radius: 1rem;
 
 	@media only screen and (max-width: ${({ theme }) =>

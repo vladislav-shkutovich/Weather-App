@@ -66,6 +66,7 @@ const white = '#171d1f'
 
 // ? Black
 const primary = '#171d1f'
+const primaryLighter = '#1d2325'
 const secondary = '#252a2c'
 const secondaryLight = '#2b2e30'
 const background = '#39393a'
@@ -96,6 +97,7 @@ export default {
 	fontSizes,
 	colors: {
 		primary,
+		primaryLighter,
 		secondary,
 		secondaryLight,
 		black,

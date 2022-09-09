@@ -1,2 +1,1 @@
-export const selectWeatherData = state =>
-	state.weatherSliceReducer
+export const selectWeatherData = state => state.weatherState

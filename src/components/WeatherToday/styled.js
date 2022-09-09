@@ -31,7 +31,11 @@ export const StyledToday = styled.p`
 	align-self: flex-end;
 	font-size: ${({ theme }) => theme.fontSizes.large}rem;
 	padding: ${({ theme }) => theme.paddings[2]}rem;
-	background-color: ${({ theme }) => theme.colors.primary};
+	background: linear-gradient(
+		to bottom,
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.primaryLighter}
+	);
 	border-radius: 1rem;
 
 	@media only screen and (max-width: ${({ theme }) =>
@@ -96,9 +100,9 @@ export const StyledInfoLabel = styled.p`
 	padding: ${({ theme }) => theme.paddings[1]}rem
 		${({ theme }) => theme.paddings[3]}rem;
 	background: linear-gradient(
-		to bottom right,
+		to bottom,
 		${({ theme }) => theme.colors.primary},
-		${({ theme }) => theme.colors.secondary}
+		${({ theme }) => theme.colors.primaryLighter}
 	);
 	border-radius: 1rem;
 `
