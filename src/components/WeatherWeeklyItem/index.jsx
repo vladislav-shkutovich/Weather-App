@@ -12,14 +12,17 @@ export const WeatherWeeklyItem = ({
 	icon = '10d',
 	iconAlt,
 	temp,
+	currentAPI,
 }) => {
 	return (
 		<StyledWeatherWeeklyItem>
 			<StyledDay>{day}</StyledDay>
-			<StyledIcon
-				alt={iconAlt}
-				src={getWeatherIcon(icon)}
-			/>
+			{currentAPI === 'OpenWeather' ? (
+				<StyledIcon
+					alt={iconAlt}
+					src={getWeatherIcon(icon)}
+				/>
+			) : null}
 			<StyledTemperature>{temp}°C</StyledTemperature>
 		</StyledWeatherWeeklyItem>
 	)

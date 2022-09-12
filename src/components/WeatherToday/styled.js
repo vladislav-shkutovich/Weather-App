@@ -6,9 +6,15 @@ export const StyledWeatherToday = styled.div`
 
 	display: grid;
 	grid-template-rows: 0.5fr [info-start] 0.5fr [icon-start today-start] 1.5fr [today-end] 0.75fr [temperature-start] 2fr [temperature-end icon-end] 0.5fr [info-end] 0.75fr;
-	grid-template-columns: 0.25fr [icon-start] 1.5fr [icon-end] 0.2fr [temperature-start] 1.5fr [temperature-end] 0.25fr [info-start] 3fr [info-end] 0.25fr;
+	grid-template-columns: 0.25fr [icon-start] 1.5fr [icon-end] 0.2fr [temperature-start] 2fr [temperature-end] 0.25fr [info-start] 2.5fr [info-end] 0.25fr;
 	justify-items: center;
 	box-shadow: ${({ theme }) => theme.boxShadows[1]};
+
+	@media ${({ currentAPI }) =>
+			currentAPI !== 'StormGlass'} {
+		grid-template-rows: 0.25fr [info-start] 0.5fr [icon-start today-start] 1.5fr [today-end] 0.1fr [temperature-start] 2fr [temperature-end icon-end] 0.5fr [info-end] 0.5fr;
+		grid-template-columns: 0.25fr [icon-start] 1.5fr [icon-end] 0.2fr [temperature-start] 1.5fr [temperature-end] 0.25fr [info-start] 1.5fr [info-end] 0.25fr;
+	}
 `
 
 export const StyledIcon = styled.img`
@@ -17,7 +23,21 @@ export const StyledIcon = styled.img`
 	align-self: center;
 	justify-self: end;
 	background-size: cover;
-	transform: scale(1.5);
+	transform: scale(1.3);
+
+	min-width: 5rem;
+	width: 100%;
+	max-width: 13rem;
+	border-radius: 2rem;
+`
+
+export const StyledLogo = styled.img`
+	grid-row: icon-start / icon-end;
+	grid-column: icon-start / icon-end;
+	background-image: url('../../../public/assets/stormglassLogo.png');
+	align-self: center;
+	justify-self: end;
+	background-size: cover;
 
 	min-width: 5rem;
 	width: 100%;

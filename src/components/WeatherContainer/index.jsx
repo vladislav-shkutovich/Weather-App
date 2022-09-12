@@ -7,10 +7,7 @@ import {
 } from '@/store/selectors'
 import { WeatherToday } from '@/components/WeatherToday'
 import { WeatherWeeklyItem } from '@/components/WeatherWeeklyItem'
-
-// ! временно
 import { WEEKDAYS } from '@/constants'
-
 import {
 	StyledWeatherContainer,
 	StyledWeatherWeekly,
@@ -27,7 +24,7 @@ export const WeatherContainer = () => {
 	)
 
 	const { weather } = useSelector(selectWeatherData)
-	console.log(weather)
+	// console.log(weather)
 
 	let weatherTodayData = {
 		tempToday: '',
@@ -43,16 +40,19 @@ export const WeatherContainer = () => {
 	switch (currentAPI) {
 		case 'OpenWeather':
 			weatherTodayData = {
-				tempToday: Math.round(weather?.list[0].main.temp),
+				tempToday: Math.round(
+					weather?.list?.at(0).main.temp,
+				),
 				feelsLikeToday: Math.round(
-					weather?.list[0].main.feels_like,
+					weather?.list?.at(0).main.feels_like,
 				),
 				humidityToday: Math.round(
-					weather?.list[0].main.humidity,
+					weather?.list?.at(0).main.humidity,
 				),
-				windToday: weather?.list[0].wind.speed,
-				iconToday: weather?.list[0].weather[0].icon,
-				iconAltToday: weather?.list[0].weather[0].main,
+				windToday: weather?.list?.at(0).wind.speed,
+				iconToday: weather?.list?.at(0).weather?.at(0).icon,
+				iconAltToday: weather?.list?.at(0).weather?.at(0)
+					.main,
 			}
 
 			weatherWeeklyData = weather?.list
@@ -66,22 +66,22 @@ export const WeatherContainer = () => {
 		case 'StormGlass':
 			weatherTodayData = {
 				tempToday: Math.round(
-					weather?.hours[0]?.airTemperature.noaa,
+					weather?.hours?.at(0)?.airTemperature.noaa,
 				),
 				humidityToday: Math.round(
-					weather?.hours[0]?.humidity.noaa,
+					weather?.hours?.at(0)?.humidity.noaa,
 				),
-				windToday: weather?.hours[0]?.windSpeed.noaa,
+				windToday: weather?.hours?.at(0)?.windSpeed.noaa,
 			}
 
 			weatherWeeklyData = weather?.hours
 				?.filter(
 					day =>
-						new Date(day.time).getHours() === 12 &&
-						new Date(day.time).getDate() >
-							dayInAWeek.getDate(),
+						new Date(day.time)?.getHours() === 12 &&
+						new Date(day.time)?.getDate() >
+							new Date().getDate(),
 				)
-				.slice(0, 4)
+				?.slice(0, 4)
 			break
 	}
 
@@ -93,15 +93,22 @@ export const WeatherContainer = () => {
 
 	return (
 		<StyledWeatherContainer>
-			<WeatherToday weatherTodayData={weatherTodayData} />
+			<WeatherToday
+				weatherTodayData={weatherTodayData}
+				currentAPI={currentAPI}
+			/>
 			<StyledWeatherWeekly>
 				{weatherWeeklyData?.map((item, index) => (
 					<WeatherWeeklyItem
 						key={index}
 						day={forecastDays[index]}
-						icon={item.weather[0].icon}
-						iconAlt={item.weather[0].main}
-						temp={Math.round(item.main.temp)}
+						icon={item.weather?.at(0).icon || undefined}
+						iconAlt={item.weather?.at(0).main || undefined}
+						temp={Math.round(
+							item?.main?.temp ||
+								item?.airTemperature?.noaa,
+						)}
+						currentAPI={currentAPI}
 					/>
 				))}
 			</StyledWeatherWeekly>

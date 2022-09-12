@@ -21,7 +21,7 @@ function* fetchWeatherWorker() {
 				)
 			}
 		})
-		console.log('Response at fetchWeatherWorker', res)
+		// console.log('Response at fetchWeatherWorker', res)
 
 		if (res.status === 200) {
 			yield put(

@@ -7,7 +7,7 @@ export const StyledWeatherWeeklyItem = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	box-shadow: ${({ theme }) => theme.boxShadows[1]};
 	padding: ${({ theme }) => theme.paddings[3]}rem;
 `

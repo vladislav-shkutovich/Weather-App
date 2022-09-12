@@ -3,6 +3,7 @@ import { getWeatherIcon } from '@/helpers'
 import {
 	StyledWeatherToday,
 	StyledIcon,
+	StyledLogo,
 	StyledToday,
 	StyledTemperature,
 	StyledInfoContainer,
@@ -10,7 +11,10 @@ import {
 	StyledInfoDescription,
 } from './styled'
 
-export const WeatherToday = ({ weatherTodayData }) => {
+export const WeatherToday = ({
+	weatherTodayData,
+	currentAPI,
+}) => {
 	const {
 		tempToday,
 		feelsLikeToday = '',
@@ -21,20 +25,31 @@ export const WeatherToday = ({ weatherTodayData }) => {
 	} = weatherTodayData
 
 	return (
-		<StyledWeatherToday>
-			<StyledIcon
-				alt={iconAltToday}
-				src={getWeatherIcon(iconToday)}
-			/>
+		<StyledWeatherToday currentAPI={currentAPI}>
+			{currentAPI === 'OpenWeather' ? (
+				<StyledIcon
+					alt={iconAltToday}
+					src={getWeatherIcon(iconToday)}
+				/>
+			) : (
+				<StyledLogo
+					alt={iconAltToday}
+					src="../../../public/assets/stormglassLogo.png"
+				/>
+			)}
 			<StyledToday>NOW</StyledToday>
 			<StyledTemperature>
 				{Math.round(tempToday)}°C
 			</StyledTemperature>
 			<StyledInfoContainer>
-				<StyledInfoLabel>Feels Like:</StyledInfoLabel>
-				<StyledInfoDescription>
-					{feelsLikeToday}°C
-				</StyledInfoDescription>
+				{currentAPI === 'OpenWeather' ? (
+					<React.Fragment>
+						<StyledInfoLabel>Feels Like:</StyledInfoLabel>
+						<StyledInfoDescription>
+							{feelsLikeToday}°C
+						</StyledInfoDescription>
+					</React.Fragment>
+				) : null}
 				<StyledInfoLabel>Humidity:</StyledInfoLabel>
 				<StyledInfoDescription>
 					{humidityToday}%

@@ -20,14 +20,16 @@ export class WeatherService {
 				{
 					headers: {
 						Authorization:
-							'a2e8d7f0-3050-11ed-8e42-0242ac130002-a2e8d8a4-3050-11ed-8e42-0242ac130002',
+							// ! Main mail key
+							// 'a2e8d7f0-3050-11ed-8e42-0242ac130002-a2e8d8a4-3050-11ed-8e42-0242ac130002',
+							// ! Secondary mail key
+							// '9ffa66e6-327e-11ed-869c-0242ac130002-9ffa6740-327e-11ed-869c-0242ac130002',
+							// ! Another mail key
+							'ad6a6a66-3291-11ed-93b0-0242ac130002-ad6a6b2e-3291-11ed-93b0-0242ac130002',
 					},
 				},
 			)
-			// const { hours } = res.data
-			// console.log(hours)
-			// return hours
-			console.log(res)
+			// console.log(res)
 			return res
 		} catch (error) {
 			console.log(error.response)
@@ -35,5 +37,3 @@ export class WeatherService {
 		}
 	}
 }
-
-// WeatherService.getWeatherFromStormGlass('Minsk')

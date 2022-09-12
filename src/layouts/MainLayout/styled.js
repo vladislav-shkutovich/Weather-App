@@ -16,6 +16,11 @@ export const StyledMainLayout = styled.div`
 	height: 80vh;
 	max-height: 80rem;
 
+	@media ${({ currentAPI }) =>
+			currentAPI !== 'StormGlass'} {
+		grid-template-rows: 0.1fr [header-start] 2fr [header-end calendar-start] 4fr [calendar-end weather-start] 2fr [weather-end] 0.1fr;
+	}
+
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.large}) {
 		width: 100vw;
@@ -27,6 +32,11 @@ export const StyledMainLayout = styled.div`
 		height: 100vh;
 
 		grid-template-rows: 0.1fr [header-start] 2fr [header-end calendar-start] 3fr [calendar-end weather-start] 2fr [weather-end] 0.1fr;
+
+		@media ${({ currentAPI }) =>
+				currentAPI !== 'StormGlass'} {
+			grid-template-rows: 0.1fr [header-start] 2fr [header-end calendar-start] 4fr [calendar-end weather-start] 2fr [weather-end] 0.1fr;
+		}
 	}
 
 	@media only screen and (max-width: ${({ theme }) =>
