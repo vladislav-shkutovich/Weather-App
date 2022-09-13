@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchWeather } from '@/store/slices/weatherSlice'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import {
 	selectWeatherData,
 	selectService,
@@ -15,16 +14,8 @@ import {
 
 export const WeatherContainer = () => {
 	const { currentAPI } = useSelector(selectService)
-	const dispatch = useDispatch()
-	useEffect(
-		city => {
-			dispatch(fetchWeather(city))
-		},
-		[currentAPI],
-	)
 
 	const { weather } = useSelector(selectWeatherData)
-	// console.log(weather)
 
 	let weatherTodayData = {
 		tempToday: '',

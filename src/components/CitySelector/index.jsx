@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
 import {
 	StyledFrom,
 	StyledInput,
 	StyledSearchButton,
-	StyledCountryName,
 } from './styled'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLocation } from '@/store/selectors'
+import { setCurrentLocation } from '@/store/slices/locationSlice'
+import { fetchWeather } from '@/store/slices/weatherSlice'
 
 export const CitySelector = () => {
-	// ! Временно, пока нет рендера по условиям
-	const temporalyInputCondition = false
-	// const temporalyInputCondition = true
+	const currentLocation = useSelector(selectLocation)
+	const dispatch = useDispatch()
 
 	const formik = useFormik({
 		initialValues: {
-			input: 'City',
+			input: currentLocation,
 		},
+		enableReinitialize: true,
 		onSubmit: (values, { resetForm }) => {
-			resetForm({ input: '' })
+			dispatch(setCurrentLocation(values.input))
+			dispatch(fetchWeather(currentLocation))
 		},
 	})
 
@@ -28,18 +32,14 @@ export const CitySelector = () => {
 			<StyledInput
 				id="input"
 				name="input"
-				placeholder="City"
+				placeholder="Enter City"
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.input}
 			/>
-			{temporalyInputCondition ? (
-				<StyledSearchButton type="submit">
-					Search
-				</StyledSearchButton>
-			) : (
-				<StyledCountryName>Country</StyledCountryName>
-			)}
+			<StyledSearchButton type="submit">
+				Search
+			</StyledSearchButton>
 		</StyledFrom>
 	)
 }

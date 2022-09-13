@@ -2,8 +2,11 @@ import api from '@/axios'
 import axios from 'axios'
 
 export class WeatherService {
-	static getWeather(city) {
-		return api.get(`/forecast?q=${city}`)
+	static getWeather(city, lon) {
+		// ? If coords used instead of city GET-request to another API part
+		if (lon) {
+			return api.get(`/forecast?lat=${city}&lon=${lon}`)
+		} else return api.get(`/forecast?q=${city}`)
 	}
 
 	static async getWeatherFromStormGlass(city) {

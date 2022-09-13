@@ -121,7 +121,7 @@ export const StyledInfoLabel = styled.p`
 		${({ theme }) => theme.paddings[3]}rem;
 	background: linear-gradient(
 		to bottom,
-		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.secondary},
 		${({ theme }) => theme.colors.primaryLighter}
 	);
 	border-radius: 1rem;
