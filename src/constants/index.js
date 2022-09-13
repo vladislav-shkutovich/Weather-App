@@ -1,4 +1,4 @@
-export const WEEKDAYS = [
+const WEEKDAYS = [
 	'MON',
 	'TUE',
 	'WED',
@@ -7,3 +7,10 @@ export const WEEKDAYS = [
 	'SAT',
 	'SUN',
 ]
+
+export const dayInAWeek = new Date().getDay()
+
+export const forecastDays = WEEKDAYS.slice(
+	dayInAWeek,
+	WEEKDAYS.length,
+).concat(WEEKDAYS.slice(0, dayInAWeek - 1))

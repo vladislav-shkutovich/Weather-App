@@ -18,7 +18,6 @@ export const App = () => {
 			const { latitude, longitude } = pos.coords
 			dispatch(setCurrentCoords({ latitude, longitude }))
 		}
-
 		navigator.geolocation.getCurrentPosition(
 			successGeolocation,
 		)
@@ -32,7 +31,6 @@ export const App = () => {
 			dispatch(fetchWeather())
 		},
 		[currentAPI, currentLocation],
-		// [currentAPI],
 	)
 
 	return (

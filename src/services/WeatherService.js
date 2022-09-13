@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export class WeatherService {
 	static getWeather(city, lon) {
-		// ? If coords used instead of city GET-request to another API part
+		// ? Possibility to use coords instead of search by city
+		// ? param named "city" instead of "lat" for convenience
 		if (lon) {
 			return api.get(`/forecast?lat=${city}&lon=${lon}`)
 		} else return api.get(`/forecast?q=${city}`)
@@ -12,7 +13,7 @@ export class WeatherService {
 	static async getWeatherFromStormGlass(city) {
 		try {
 			const resFromGeocoding = await axios.get(
-				`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=d6fd7eb7b4a5480c43622871cf2007fa`,
+				`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${process.env.REACT_APP_API_KEY}`,
 			)
 			// eslint-disable-next-line prefer-destructuring
 			const { lat, lon } = resFromGeocoding.data[0]
@@ -24,15 +25,14 @@ export class WeatherService {
 					headers: {
 						Authorization:
 							// ! Main mail key
-							// 'a2e8d7f0-3050-11ed-8e42-0242ac130002-a2e8d8a4-3050-11ed-8e42-0242ac130002',
-							// ! Secondary mail key
-							// '9ffa66e6-327e-11ed-869c-0242ac130002-9ffa6740-327e-11ed-869c-0242ac130002',
-							// ! Another mail key
-							'ad6a6a66-3291-11ed-93b0-0242ac130002-ad6a6b2e-3291-11ed-93b0-0242ac130002',
+							process.env.REACT_APP_API_KEY_STORM,
+						// ! Secondary mail key
+						// process.env.REACT_APP_API_KEY_STORM_BACKUP1,
+						// ! Another mail key
+						// process.env.REACT_APP_API_KEY_STORM_BACKUP2,
 					},
 				},
 			)
-			// console.log(res)
 			return res
 		} catch (error) {
 			console.log(error.response)

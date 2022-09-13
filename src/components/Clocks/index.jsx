@@ -8,7 +8,6 @@ import {
 } from './styled'
 
 export const Clocks = () => {
-	// ! Временно, пока нет функционала для определения местоположения
 	const timeZone = 'Europe/Minsk'
 	const [dateAndTime, setDateAndTime] = useState(() =>
 		getFullDate(),

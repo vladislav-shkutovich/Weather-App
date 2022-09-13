@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import { useFormik } from 'formik'
+import React from 'react'
 import {
 	StyledFrom,
 	StyledInput,
 	StyledSearchButton,
 } from './styled'
+import { useFormik } from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLocation } from '@/store/selectors'
 import { setCurrentLocation } from '@/store/slices/locationSlice'
 import { fetchWeather } from '@/store/slices/weatherSlice'
 
 export const CitySelector = () => {
-	const currentLocation = useSelector(selectLocation)
 	const dispatch = useDispatch()
+	const currentLocation = useSelector(selectLocation)
 
 	const formik = useFormik({
 		initialValues: {
@@ -32,7 +32,7 @@ export const CitySelector = () => {
 			<StyledInput
 				id="input"
 				name="input"
-				placeholder="Enter City"
+				placeholder="Choose City"
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.input}

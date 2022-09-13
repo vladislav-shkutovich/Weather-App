@@ -15,7 +15,7 @@ const breakpoints = {
 	large: '900px',
 }
 
-const margins = [0.2, 0.5, 1, 1.5, 2, 3, 4, 5]
+const margins = [0.2, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 7]
 
 const paddings = [0.2, 0.5, 0.8, 1.0, 1.5, 2, 3, 4]
 
@@ -27,9 +27,9 @@ const fontSizes = {
 	regular: 1.6,
 	large: 1.8,
 	temperatureWeekly: 2.2,
-	citySizeMedia: 2.6,
+	citySizeMedia: 2.0,
 	clocksTimeMedia: 3.2,
-	xlarge: 3.6,
+	xlarge: 3.0,
 	temperature: 4.0,
 	xxlarge: 4.8,
 }

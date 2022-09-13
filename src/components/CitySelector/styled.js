@@ -33,24 +33,9 @@ export const StyledInput = styled.input`
 
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.xxs}) {
-		font-size: ${({ theme }) =>
-			theme.fontSizes.temperatureWeekly}rem;
+		font-size: ${({ theme }) => theme.fontSizes.large}rem;
 	}
 `
-
-// export const StyledCountryName = styled.p`
-// 	grid-row: country-start / country-end;
-// 	grid-column: country-start / country-end;
-// 	align-self: flex-start;
-// 	padding-left: ${({ theme }) => theme.paddings[2]}rem;
-// 	font-size: ${({ theme }) => theme.fontSizes.regular}rem;
-
-// 	@media only screen and (max-width: ${({ theme }) =>
-// 			theme.breakpoints.xxs}) {
-// 		font-size: ${({ theme }) => theme.fontSizes.medium}rem;
-// 	}
-// `
-
 export const StyledSearchButton = styled.button`
 	grid-row: button-start / button-end;
 	grid-column: button-start / button-end;

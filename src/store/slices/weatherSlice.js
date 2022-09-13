@@ -4,7 +4,6 @@ const initialState = {
 	list: [],
 	isLoading: false,
 	lastUpdate: '',
-	// cityName: 'Brest',
 }
 
 export const weatherSlice = createSlice({
@@ -17,13 +16,7 @@ export const weatherSlice = createSlice({
 		fetchWeatherSuccess(state, action) {
 			state.isLoading = false
 			state.weather = action.payload.data
-			// state.weather = {
-			// 	...action.payload.data,
-			// 	[action.payload.data.city.name]:
-			// 		action.payload.data.city.name,
-			// }
 			state.lastUpdate = new Date().getTime()
-			// state.cityName = action.payload?.data?.city.name
 		},
 		fetchWeatherError(state, action) {
 			state.isLoading = false

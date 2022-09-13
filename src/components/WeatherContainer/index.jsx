@@ -6,7 +6,7 @@ import {
 } from '@/store/selectors'
 import { WeatherToday } from '@/components/WeatherToday'
 import { WeatherWeeklyItem } from '@/components/WeatherWeeklyItem'
-import { WEEKDAYS } from '@/constants'
+import { dayInAWeek, forecastDays } from '@/constants'
 import {
 	StyledWeatherContainer,
 	StyledWeatherWeekly,
@@ -14,20 +14,9 @@ import {
 
 export const WeatherContainer = () => {
 	const { currentAPI } = useSelector(selectService)
-
 	const { weather } = useSelector(selectWeatherData)
 
-	let weatherTodayData = {
-		tempToday: '',
-		feelsLikeToday: '',
-		humidityToday: '',
-		humidity: '',
-		windToday: '',
-		iconToday: '',
-		iconAltToday: '',
-	}
-	let weatherWeeklyData = []
-
+	let weatherTodayData, weatherWeeklyData
 	switch (currentAPI) {
 		case 'OpenWeather':
 			weatherTodayData = {
@@ -45,7 +34,6 @@ export const WeatherContainer = () => {
 				iconAltToday: weather?.list?.at(0).weather?.at(0)
 					.main,
 			}
-
 			weatherWeeklyData = weather?.list
 				?.filter(
 					day =>
@@ -64,7 +52,6 @@ export const WeatherContainer = () => {
 				),
 				windToday: weather?.hours?.at(0)?.windSpeed.noaa,
 			}
-
 			weatherWeeklyData = weather?.hours
 				?.filter(
 					day =>
@@ -75,12 +62,6 @@ export const WeatherContainer = () => {
 				?.slice(0, 4)
 			break
 	}
-
-	const dayInAWeek = new Date().getDay()
-	const forecastDays = WEEKDAYS.slice(
-		dayInAWeek,
-		WEEKDAYS.length,
-	).concat(WEEKDAYS.slice(0, dayInAWeek - 1))
 
 	return (
 		<StyledWeatherContainer>
@@ -93,8 +74,8 @@ export const WeatherContainer = () => {
 					<WeatherWeeklyItem
 						key={index}
 						day={forecastDays[index]}
-						icon={item.weather?.at(0).icon || undefined}
-						iconAlt={item.weather?.at(0).main || undefined}
+						icon={item.weather?.at(0).icon}
+						iconAlt={item.weather?.at(0).main}
 						temp={Math.round(
 							item?.main?.temp ||
 								item?.airTemperature?.noaa,
