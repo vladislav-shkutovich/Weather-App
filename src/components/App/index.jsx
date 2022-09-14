@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import GlobalStyles from '@/globalStyles'
 import { MainPage } from '@/pages/MainPage'
-
+import { Loader } from '@/components/Loader'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentCoords } from '@/store/slices/locationSlice'
 import { fetchWeather } from '@/store/slices/weatherSlice'
@@ -9,9 +9,11 @@ import {
 	selectService,
 	selectLocation,
 	selectWeatherData,
+	selectLoading,
 } from '@/store/selectors'
 
 export const App = () => {
+	const isLoading = useSelector(selectLoading)
 	const currentLocation = useSelector(selectLocation)
 	const { currentAPI } = useSelector(selectService)
 	const weatherData = useSelector(selectWeatherData)
@@ -45,6 +47,7 @@ export const App = () => {
 
 	return (
 		<React.Fragment>
+			{isLoading && <Loader />}
 			<MainPage />
 			<GlobalStyles
 				currentWeatherName={currentWeatherName}

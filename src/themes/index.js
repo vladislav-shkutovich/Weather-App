@@ -37,56 +37,19 @@ const fontSizes = {
 // * Color palettes
 
 const error = '#bd3636'
-
-// * Dark theme
 const black = '#b4c4d5'
 const white = '#171d1f'
 
-// * Light theme
-// const black = '#171d1f'
-// const white = '#b4c4d5'
-
-// ? Green
-// const primary = '#9cff1b'
-// const secondary = '#c5ff68'
-// const secondaryLight = '#e8ffc3'
-// const background = '#f7ffe7'
-
-// ? Blue
-// const primary = '#2b87ff'
-// const secondary = '#76b1ff'
-// const secondaryLight = '#d7e9ff'
-// const background = '#f2f8ff'
-
-// ? Violet
-// const primary = '#a575f1'
-// const secondary = '#a697ff'
-// const secondaryLight = '#d2caff'
-// const background = '#e5e1ff'
-
-// ? Black
 const primary = '#171d1f'
 const primaryLighter = '#1d2325'
 const secondary = '#252a2c'
 const secondaryLight = '#2b2e30'
 const background = '#39393a'
-
 const backgroundImage = 'rgb(57, 57, 58, 0.7)'
 const backgroundImageSecondary = 'rgb(43, 46, 48, 0.7)'
 
-// * Highligthes
-
-// const highlight = '#c69963'
-// const highlightSecondary = '#6d5d4b'
-
 const highlight = '#db324d'
 const highlightSecondary = '#a62639'
-
-// const highlight = '#63d471'
-// const highlightSecondary = '#4e7d55'
-
-// const highlight = '#064789'
-// const highlightSecondary = '#427aa1'
 
 export default {
 	font,

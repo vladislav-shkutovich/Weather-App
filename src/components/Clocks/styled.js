@@ -48,7 +48,7 @@ export const StyledDayPart = styled.p`
 
 	@media only screen and (max-width: ${({ theme }) =>
 			theme.breakpoints.small}) {
-		margin-top: ${({ theme }) => theme.margins[7]}rem;
+		margin-top: ${({ theme }) => theme.margins[8]}rem;
 	}
 `
 
