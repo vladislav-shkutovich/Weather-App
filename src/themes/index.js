@@ -71,8 +71,8 @@ const secondary = '#252a2c'
 const secondaryLight = '#2b2e30'
 const background = '#39393a'
 
-const backgroundImage = 'rgb(57, 57, 58, 0.8)'
-const backgroundImageSecondary = 'rgb(43, 46, 48, 0.8)'
+const backgroundImage = 'rgb(57, 57, 58, 0.7)'
+const backgroundImageSecondary = 'rgb(43, 46, 48, 0.7)'
 
 // * Highligthes
 

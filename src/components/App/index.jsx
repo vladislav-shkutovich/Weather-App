@@ -8,9 +8,13 @@ import { fetchWeather } from '@/store/slices/weatherSlice'
 import {
 	selectService,
 	selectLocation,
+	selectWeatherData,
 } from '@/store/selectors'
 
 export const App = () => {
+	const currentLocation = useSelector(selectLocation)
+	const { currentAPI } = useSelector(selectService)
+	const weatherData = useSelector(selectWeatherData)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
@@ -23,9 +27,6 @@ export const App = () => {
 		)
 	}, [])
 
-	const { currentAPI } = useSelector(selectService)
-	const currentLocation = useSelector(selectLocation)
-
 	useEffect(
 		city => {
 			dispatch(fetchWeather())
@@ -33,10 +34,21 @@ export const App = () => {
 		[currentAPI, currentLocation],
 	)
 
+	const currentWeatherType = weatherData?.weather?.list
+		?.at(0)
+		.weather.at(0).main // "Clear" "Clouds" "Rain" "Snow"
+	const currentHour = new Date().getHours()
+	const partOfTheDay =
+		currentHour < 7 || currentHour > 19 ? 'Night' : 'Day'
+	const currentWeatherName = `background${currentWeatherType ||
+		'Default'}${partOfTheDay}`
+
 	return (
 		<React.Fragment>
 			<MainPage />
-			<GlobalStyles />
+			<GlobalStyles
+				currentWeatherName={currentWeatherName}
+			/>
 		</React.Fragment>
 	)
 }

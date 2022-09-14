@@ -7,6 +7,11 @@ export const StyledMainLayout = styled.div`
 	grid-template-rows: 0.1fr [header-start] 2fr [header-end calendar-start] 3fr [calendar-end weather-start] 3fr [weather-end] 0.1fr;
 	grid-template-columns: [application-start] 1fr [calendar-start] 8fr [calendar-end] 1fr [application-end];
 
+	background-image: linear-gradient(
+		to bottom,
+		${({ theme }) => theme.colors.backgroundImage},
+		${({ theme }) => theme.colors.backgroundImageSecondary}
+	);
 	border: 0.2rem solid
 		${({ theme }) => theme.colors.secondary};
 	box-shadow: ${({ theme }) => theme.boxShadows[0]};
