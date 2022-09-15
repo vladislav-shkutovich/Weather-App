@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledCalendarItem = styled.div`
-	/* border: 0.3rem solid ${({ theme }) =>
-		theme.colors.error}; */
 	display: flex;
 	align-items: center;
 	padding: ${({ theme }) => theme.paddings[1]}rem;

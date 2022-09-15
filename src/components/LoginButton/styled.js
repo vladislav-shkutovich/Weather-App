@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
 
 	border: none;
 	border-radius: 0.4rem;
-	height: ${({ height }) => height};
+	height: 2.7rem;
 	width: 12rem;
 
 	cursor: pointer;

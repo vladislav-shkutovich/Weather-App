@@ -8,6 +8,7 @@ export const StyledCalendar = styled.div`
 	flex-direction: column;
 	row-gap: 1rem;
 	overflow: auto;
+	margin: ${({ theme }) => theme.margins[2]}rem 0;
 
 	& ::-webkit-scrollbar {
 		width: 0.8rem;

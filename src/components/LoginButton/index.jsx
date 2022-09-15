@@ -1,21 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ApiCalendar from 'react-google-calendar-api'
 import { StyledButton } from './styled'
-import {
-	selectLogin,
-	selectCalendarItems,
-} from '@/store/selectors'
+import { selectLogin } from '@/store/selectors'
 import { useDispatch, useSelector } from 'react-redux'
 import {
 	setLoginState,
 	setCalendarItems,
+	setCalendarMessage,
 	clearCalendarItems,
 } from '@/store/slices/calendarSlice'
 
 export const LoginButton = () => {
 	const dispatch = useDispatch()
 	const isLogin = useSelector(selectLogin)
-	const calendarItems = useSelector(selectCalendarItems)
 
 	const config = {
 		clientId:
@@ -33,10 +30,20 @@ export const LoginButton = () => {
 		if (name === 'sign-in') {
 			apiCalendar.handleAuthClick()
 			dispatch(setLoginState(true))
+			dispatch(
+				setCalendarMessage(
+					'Click the "Get Events" button to display your events from the calendar.',
+				),
+			)
 		} else if (name === 'sign-out') {
 			apiCalendar.handleSignoutClick()
 			dispatch(setLoginState(false))
 			dispatch(clearCalendarItems())
+			dispatch(
+				setCalendarMessage(
+					'Please sign in with Google to get events from your calendar.',
+				),
+			)
 		}
 	}
 
@@ -46,9 +53,12 @@ export const LoginButton = () => {
 				.listUpcomingEvents(10)
 				.then(({ result }) => {
 					dispatch(setCalendarItems(result.items))
-					if (result.accessRole) {
-						dispatch(setLoginState(true))
-					}
+					if (result.items.length === 0)
+						dispatch(
+							setCalendarMessage(
+								'You have no more events for today.',
+							),
+						)
 				})
 				.catch(() => {
 					dispatch(setLoginState(false))
@@ -64,16 +74,14 @@ export const LoginButton = () => {
 		<>
 			{!isLogin ? (
 				<StyledButton
-					rows="login-start / login-end"
-					height="2.7rem"
-					align="flex-start"
+					rows="login-start / separation"
+					align="flex-end"
 					onClick={e => handleItemClick(e, 'sign-in')}>
 					Sign In
 				</StyledButton>
 			) : (
 				<StyledButton
 					rows="login-start / separation"
-					height="2.7rem"
 					colorType="red"
 					align="flex-end"
 					onClick={e => handleItemClick(e, 'sign-out')}>
@@ -82,7 +90,6 @@ export const LoginButton = () => {
 			)}
 			<StyledButton
 				rows="separation / login-end"
-				height="2.7rem"
 				align="flex-start"
 				onClick={() => getEvents()}>
 				Get Events
