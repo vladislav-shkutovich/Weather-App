@@ -23,6 +23,7 @@ const fontSizes = {
 	xxsmall: 0.8,
 	xsmall: 1.0,
 	small: 1.2,
+	smallButtons: 1.3,
 	medium: 1.4,
 	regular: 1.6,
 	large: 1.8,
@@ -48,8 +49,8 @@ const background = '#39393a'
 const backgroundImage = 'rgb(57, 57, 58, 0.7)'
 const backgroundImageSecondary = 'rgb(43, 46, 48, 0.7)'
 
-const highlight = '#db324d'
-const highlightSecondary = '#a62639'
+const highlight = '#7e1023'
+const highlightSecondary = '#420c0c'
 
 export default {
 	font,

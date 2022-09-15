@@ -10,7 +10,7 @@ export const StyledServiceSelector = styled.select`
 	height: 4rem;
 	width: 12rem;
 	border: none;
-	border-radius: 0.8rem;
+	border-radius: 0.4rem;
 
 	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
 	background: linear-gradient(
@@ -22,8 +22,11 @@ export const StyledServiceSelector = styled.select`
 	padding: ${({ theme }) => theme.paddings[1]}rem;
 
 	& :hover {
-		background-color: ${({ theme }) =>
-			theme.colors.secondaryLight};
+		background: linear-gradient(
+			to top right,
+			${({ theme }) => theme.colors.primary},
+			${({ theme }) => theme.colors.highlightSecondary}
+		);
 	}
 
 	& > option {

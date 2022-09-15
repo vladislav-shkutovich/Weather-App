@@ -20,6 +20,7 @@ export const App = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
+		if (currentLocation) return
 		const successGeolocation = pos => {
 			const { latitude, longitude } = pos.coords
 			dispatch(setCurrentCoords({ latitude, longitude }))

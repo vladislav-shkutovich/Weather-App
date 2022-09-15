@@ -42,7 +42,7 @@ export const StyledSearchButton = styled.button`
 	align-self: flex-start;
 
 	border: none;
-	border-radius: 0.8rem;
+	border-radius: 0.4rem;
 	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
 	background: linear-gradient(
 		to bottom left,
@@ -55,8 +55,11 @@ export const StyledSearchButton = styled.button`
 	width: 8rem;
 
 	& :hover {
-		background-color: ${({ theme }) =>
-			theme.colors.secondaryLight};
+		background: linear-gradient(
+			to top right,
+			${({ theme }) => theme.colors.primary},
+			${({ theme }) => theme.colors.highlightSecondary}
+		);
 		transform: scale(1.03);
 	}
 

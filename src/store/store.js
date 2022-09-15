@@ -6,6 +6,7 @@ import {
 import weatherSliceReducer from '@/store/slices/weatherSlice'
 import serviceSliceReducer from '@/store/slices/serviceSlice'
 import locationSliceReducer from '@/store/slices/locationSlice'
+import calendarSliceReducer from '@/store/slices/calendarSlice'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
 
@@ -16,11 +17,13 @@ const rootReducer = combineReducers({
 	weatherState: weatherSliceReducer,
 	serviceState: serviceSliceReducer,
 	locationState: locationSliceReducer,
+	calendarState: calendarSliceReducer,
 })
 
 const persistConfig = {
 	key: 'root',
 	storage,
+	blacklist: ['calendarState'],
 }
 
 const persistedReducer = persistReducer(
