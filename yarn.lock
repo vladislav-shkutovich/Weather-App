@@ -7266,11 +7266,6 @@ react-redux@^8.0.2:
     react-is "^18.0.0"
     use-sync-external-store "^1.0.0"
 
-react-with-firebase-auth@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/react-with-firebase-auth/-/react-with-firebase-auth-1.4.1.tgz#dd572f0880200de3b132337cd569ca38b94b9eb8"
-  integrity sha512-IkhPlnSFwVu30f/m6tL7cno4SsVnq+yUSadk1ntuurLgVZjTFZLwYTnIzwM4Rc8sx+wgBl7mEGo8XPzWWLjg7A==
-
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
