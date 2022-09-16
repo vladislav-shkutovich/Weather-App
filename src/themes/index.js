@@ -35,7 +35,6 @@ const fontSizes = {
 	xxlarge: 4.8,
 }
 
-const error = '#bd3636'
 const black = '#b4c4d5'
 const white = '#171d1f'
 
@@ -66,7 +65,6 @@ export default {
 		secondaryLight,
 		black,
 		white,
-		error,
 		background,
 		backgroundImage,
 		backgroundImageSecondary,

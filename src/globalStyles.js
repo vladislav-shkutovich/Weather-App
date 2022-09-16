@@ -26,13 +26,6 @@ export default createGlobalStyle`
 		width: 100%;
 		height: 100%;
 		display: grid;
-		/* background-image: linear-gradient(to bottom, ${({
-			theme,
-		}) => theme.colors.backgroundImage}, ${({ theme }) =>
-	theme.colors
-		.backgroundImageSecondary}), url('../public/assets/${({
-	currentWeatherName,
-}) => currentWeatherName}.jpg'); */
 		background-image: url('../public/assets/${({
 			currentWeatherName,
 		}) => currentWeatherName}.jpg');
