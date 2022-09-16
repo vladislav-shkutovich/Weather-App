@@ -13,7 +13,7 @@ export class WeatherService {
 	static async getWeatherFromStormGlass(city) {
 		try {
 			const resFromGeocoding = await axios.get(
-				`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${process.env.REACT_APP_API_KEY}`,
+				`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${process.env.REACT_APP_API_KEY}`,
 			)
 			// eslint-disable-next-line prefer-destructuring
 			const { lat, lon } = resFromGeocoding.data[0]
