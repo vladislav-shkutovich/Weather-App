@@ -35,8 +35,6 @@ const fontSizes = {
 	xxlarge: 4.8,
 }
 
-// * Color palettes
-
 const error = '#bd3636'
 const black = '#b4c4d5'
 const white = '#171d1f'
@@ -49,8 +47,10 @@ const background = '#39393a'
 const backgroundImage = 'rgb(57, 57, 58, 0.7)'
 const backgroundImageSecondary = 'rgb(43, 46, 48, 0.7)'
 
-const highlight = '#7e1023'
-const highlightSecondary = '#420c0c'
+const highlight = '#107e54'
+const highlightSecondary = '#0c4230'
+const highlightRed = '#7e1023'
+const highlightRedSecondary = '#420c0c'
 
 export default {
 	font,
@@ -72,5 +72,7 @@ export default {
 		backgroundImageSecondary,
 		highlight,
 		highlightSecondary,
+		highlightRed,
+		highlightRedSecondary,
 	},
 }

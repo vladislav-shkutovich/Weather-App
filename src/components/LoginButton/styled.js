@@ -15,8 +15,8 @@ export const StyledButton = styled.button`
 	font-size: ${({ theme }) => theme.fontSizes.medium}rem;
 	background: linear-gradient(
 		to bottom left,
-		${({ theme }) => theme.colors.highlight},
-		${({ theme }) => theme.colors.highlightSecondary}
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.secondary}
 	);
 	color: ${({ theme }) => theme.colors.black};
 	padding: ${({ theme }) => theme.paddings[1]}rem;
@@ -25,8 +25,8 @@ export const StyledButton = styled.button`
 	& :hover {
 		background: linear-gradient(
 			to top right,
-			${({ theme }) => theme.colors.highlight},
-			${({ theme }) => theme.colors.error}
+			${({ theme }) => theme.colors.primary},
+			${({ theme }) => theme.colors.highlightSecondary}
 		);
 		transform: scale(1.02);
 	}
@@ -35,18 +35,18 @@ export const StyledButton = styled.button`
 		transform: scale(0.99);
 	}
 
-	@media ${({ colorType }) => colorType === 'red'} {
+	@media ${({ colorType }) => !colorType} {
 		background: linear-gradient(
 			to bottom left,
-			${({ theme }) => theme.colors.primary},
-			${({ theme }) => theme.colors.secondary}
+			${({ theme }) => theme.colors.highlightRedSecondary},
+			${({ theme }) => theme.colors.highlightRed}
 		);
 
 		& :hover {
 			background: linear-gradient(
 				to top right,
-				${({ theme }) => theme.colors.primary},
-				${({ theme }) => theme.colors.highlightSecondary}
+				${({ theme }) => theme.colors.highlightRed},
+				${({ theme }) => theme.colors.highlightRedSecondary}
 			);
 			transform: scale(1.02);
 		}

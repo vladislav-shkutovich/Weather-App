@@ -15,9 +15,8 @@ export const LoginButton = () => {
 	const isLogin = useSelector(selectLogin)
 
 	const config = {
-		clientId:
-			'1056593856628-4udlo84ttgknfe6sp13f8kj96ekhk802.apps.googleusercontent.com',
-		apiKey: 'AIzaSyBro4foFC_Qq_q7OgaTjpFqEn07oYJSeXU',
+		clientId: `${process.env.REACT_APP_API_CLIENT_ID_CALENDAR}.apps.googleusercontent.com`,
+		apiKey: `${process.env.REACT_APP_API_KEY_CALENDAR}`,
 		scope: 'https://www.googleapis.com/auth/calendar',
 		discoveryDocs: [
 			'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest',
@@ -70,8 +69,7 @@ export const LoginButton = () => {
 	}
 
 	return (
-		// eslint-disable-next-line react/jsx-fragments
-		<>
+		<React.Fragment>
 			{!isLogin ? (
 				<StyledButton
 					rows="login-start / separation"
@@ -94,6 +92,6 @@ export const LoginButton = () => {
 				onClick={() => getEvents()}>
 				Get Events
 			</StyledButton>
-		</>
+		</React.Fragment>
 	)
 }
