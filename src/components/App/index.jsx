@@ -8,43 +8,37 @@ import { fetchWeather } from '@/store/slices/weatherSlice'
 import {
 	selectService,
 	selectLocation,
-	selectWeatherData,
 	selectLoading,
+	selectCurrentWeatherType,
 } from '@/store/selectors'
+import { partOfTheDay } from '@/helpers'
 
 export const App = () => {
 	const isLoading = useSelector(selectLoading)
 	const currentLocation = useSelector(selectLocation)
 	const { currentAPI } = useSelector(selectService)
-	const weatherData = useSelector(selectWeatherData)
-	const dispatch = useDispatch()
-
-	useEffect(() => {
-		if (currentLocation) return
-		const successGeolocation = pos => {
-			const { latitude, longitude } = pos.coords
-			dispatch(setCurrentCoords({ latitude, longitude }))
-		}
-		navigator.geolocation.getCurrentPosition(
-			successGeolocation,
-		)
-	}, [])
-
-	useEffect(
-		city => {
-			dispatch(fetchWeather())
-		},
-		[currentAPI, currentLocation],
+	const currentWeatherType = useSelector(
+		selectCurrentWeatherType,
 	)
-
-	const currentWeatherType = weatherData?.weather?.list
-		?.at(0)
-		.weather.at(0).main // "Clear" "Clouds" "Rain" "Snow"
-	const currentHour = new Date().getHours()
-	const partOfTheDay =
-		currentHour < 7 || currentHour > 19 ? 'Night' : 'Day'
+	const dispatch = useDispatch()
 	const currentWeatherName = `background${currentWeatherType ||
 		'Default'}${partOfTheDay}`
+
+	useEffect(() => {
+		if (!currentLocation) {
+			const successGeolocation = pos => {
+				const { latitude, longitude } = pos.coords
+				dispatch(setCurrentCoords({ latitude, longitude }))
+			}
+			navigator.geolocation.getCurrentPosition(
+				successGeolocation,
+			)
+		}
+	}, [])
+
+	useEffect(() => {
+		dispatch(fetchWeather())
+	}, [currentAPI, currentLocation])
 
 	return (
 		<React.Fragment>

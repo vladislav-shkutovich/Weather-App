@@ -1,16 +1,4 @@
-const WEEKDAYS = [
-	'MON',
-	'TUE',
-	'WED',
-	'THU',
-	'FRI',
-	'SAT',
-	'SUN',
-]
-
-export const dayInAWeek = new Date().getDay()
-
-export const forecastDays = WEEKDAYS.slice(
-	dayInAWeek,
-	WEEKDAYS.length,
-).concat(WEEKDAYS.slice(0, dayInAWeek - 1))
+export * from './calendarAPIConfig'
+export * from './servicesNames'
+export * from './timeZone'
+export * from './weekdays'

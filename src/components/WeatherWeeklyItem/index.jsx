@@ -8,12 +8,16 @@ import {
 } from './styled'
 
 export const WeatherWeeklyItem = ({
-	day,
-	icon = '10d',
-	iconAlt,
-	temp,
+	weatherWeeklyData,
 	currentAPI,
 }) => {
+	const {
+		day,
+		icon = '10d',
+		iconAlt = '',
+		temp,
+	} = weatherWeeklyData
+
 	return (
 		<StyledWeatherWeeklyItem>
 			<StyledDay>{day}</StyledDay>

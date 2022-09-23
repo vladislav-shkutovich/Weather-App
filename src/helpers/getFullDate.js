@@ -4,7 +4,9 @@ export const getFullDate = timeZone => {
 	if (!timeZone)
 		return {
 			time: moment().format('hh:mm'),
-			amPm: moment().format('a'),
+			amPm: moment()
+				.format('a')
+				.toUpperCase(),
 			today: moment().format('dddd'),
 			day: moment().format('LL'),
 			fullDate: moment().format(),
@@ -15,7 +17,8 @@ export const getFullDate = timeZone => {
 			.format('hh:mm'),
 		amPm: moment()
 			.tz(timeZone)
-			.format('a'),
+			.format('a')
+			.toUpperCase(),
 		today: moment()
 			.tz(timeZone)
 			.format('dddd'),

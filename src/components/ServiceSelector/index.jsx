@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectService } from '@/store/selectors'
 import { touchService } from '@/store/slices/serviceSlice'
+import { servicesNames } from '@/constants'
 import { StyledServiceSelector } from './styled'
 
 export const ServiceSelector = () => {
@@ -16,12 +17,11 @@ export const ServiceSelector = () => {
 		<StyledServiceSelector
 			defaultValue={currentAPI}
 			onChange={handleService}>
-			<option key="OpenWeather" value="OpenWeather">
-				OpenWeather
-			</option>
-			<option key="StormGlass" value="StormGlass">
-				StormGlass
-			</option>
+			{servicesNames.map(name => (
+				<option key={'service_' + name} value={name}>
+					{name}
+				</option>
+			))}
 		</StyledServiceSelector>
 	)
 }

@@ -16,7 +16,7 @@ export const Calendar = () => {
 			{calendarItems.length !== 0
 				? calendarItems.map((item, index) => (
 						<CalendarItem
-							key={index}
+							key={item.id}
 							item={item}
 							isLast={calendarItems.length - 1 === index}
 						/>

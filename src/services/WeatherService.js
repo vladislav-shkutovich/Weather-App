@@ -1,10 +1,8 @@
-import api from '@/axios'
+import { api } from '@/axios'
 import axios from 'axios'
 
 export class WeatherService {
 	static getWeather(city, lon) {
-		// ? Possibility to use coords instead of search by city
-		// ? param named "city" instead of "lat" for convenience
 		if (lon) {
 			return api.get(`/forecast?lat=${city}&lon=${lon}`)
 		} else return api.get(`/forecast?q=${city}`)

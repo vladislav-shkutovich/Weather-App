@@ -1,2 +1,5 @@
 export * from './getFullDate'
 export * from './getWeatherIcon'
+export * from './getPartOfTheDay'
+export * from './getFormattedTaskData'
+export * from './getForecastDays'

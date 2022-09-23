@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { getFullDate } from '@/helpers'
 import {
 	StyledClocks,
@@ -6,28 +6,28 @@ import {
 	StyledDayPart,
 	StyledDate,
 } from './styled'
+import { timeZone } from '@/constants'
 
 export const Clocks = () => {
-	const timeZone = 'Europe/Minsk'
+	const intervalId = useRef()
 	const [dateAndTime, setDateAndTime] = useState(() =>
 		getFullDate(),
 	)
+	const { time, amPm, today, day } = dateAndTime
 
 	useEffect(() => {
-		const interval = setInterval(() => {
+		intervalId.current = setInterval(() => {
 			setDateAndTime(getFullDate(timeZone))
 		}, 1000)
-		return () => clearInterval(interval)
+		return () => clearInterval(intervalId.current)
 	})
 
 	return (
 		<StyledClocks>
-			<StyledTime>{dateAndTime.time}</StyledTime>
-			<StyledDayPart>
-				{dateAndTime.amPm.toUpperCase()}
-			</StyledDayPart>
+			<StyledTime>{time}</StyledTime>
+			<StyledDayPart>{amPm}</StyledDayPart>
 			<StyledDate>
-				{dateAndTime.today}, {dateAndTime.day}
+				{today}, {day}
 			</StyledDate>
 		</StyledClocks>
 	)
