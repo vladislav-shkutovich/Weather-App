@@ -7,7 +7,7 @@ export function* fetchLocationWorker() {
 	const { latitude, longitude } = yield select(selectCoords)
 
 	const res = yield axios.get(
-		`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=${process.env.REACT_APP_API_KEY}`,
+		`${process.env.REACT_APP_API_GEO_URL}?lat=${latitude}&lon=${longitude}&limit=5&appid=${process.env.REACT_APP_API_KEY}`,
 	)
 
 	yield put(setCurrentLocation(res.data[0].name))
