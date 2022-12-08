@@ -1,6 +1,9 @@
 {
   "name": "weather-app-shkutovich",
   "version": "1.0.0",
+	"engines": {
+    "node": "18.x"
+  },
   "private": false,
   "scripts": {
     "start": "node server.js",
